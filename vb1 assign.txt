@@ -1,14 +1,14 @@
-Module Module1
+Module assign1
     Sub Main()
         While True
-            Console.WriteLine("1.Tables")
-            Console.WriteLine("2.Series")
-            Console.WriteLine("3.Factorial")
-            Console.WriteLine("4.Reverse")
-            Console.WriteLine("5.Exit")
-            Console.Write("Enter Your Choice :: ")
-            Dim choice As Integer = Console.ReadLine
-            Select Case choice
+            Console.WriteLine("i.Tables")
+            Console.WriteLine("ii.Series")
+            Console.WriteLine("iii.Factorial")
+            Console.WriteLine("iv.Reverse")
+            Console.WriteLine("v.Exit")
+            Console.Write("Enter Your Choice = ")
+            Dim ch As Integer = Console.ReadLine
+            Select Case ch
                 Case 1
                     Tables()
                 Case 2
@@ -30,7 +30,7 @@ Module Module1
             Dim d As Integer = a * c
             Console.WriteLine(a & " x " & c & " = " & d)
         Next
-        Console.ReadKey()
+        Console.Readline()
     End Sub
     Public Sub Series()
         Console.WriteLine("Enter Counter : ")
@@ -41,7 +41,7 @@ Module Module1
             Console.WriteLine(b & " + " & res)
         Next
         Console.WriteLine(res)
-        Console.ReadKey()
+        Console.Readline()
     End Sub
     Public Sub Factorial()
         Console.WriteLine("Enter Number To Calculate Factorial : ")
@@ -52,7 +52,7 @@ Module Module1
             result = flag * result
         Next
         Console.WriteLine(result)
-        Console.ReadKey()
+        Console.Readline()
     End Sub
     Public Sub reverse()
         Console.WriteLine("Enter Number To Reverse")
@@ -62,6 +62,6 @@ Module Module1
             Console.Write(_ReadString(i))
             i -= 1
         End While
-        Console.ReadKey()
+        Console.Readline()
     End Sub
 End Module
