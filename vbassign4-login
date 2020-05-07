@@ -1,0 +1,29 @@
+Imports System.Data
+Imports System.Data.OleDb
+Public Class LoginForm
+    Dim con As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;" + "Data Source=C:\Users\ishan\Documents\Assignment3.accdb")
+    Dim cmd As New OleDbCommand
+    Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
+        Try
+            con.Open()
+            cmd = New OleDbCommand("SELECT * FROM Login WHERE Username='" + UsernameTextBox.Text + "' AND Password='" + PasswordTextBox.Text + "' AND Type='" + ComboBox1.Text + "'", con)
+            Dim dr As OleDbDataReader = cmd.ExecuteReader()
+            If dr.Read() Then
+                MsgBox("Login Successfully!!", MsgBoxStyle.Information)
+
+                Question2.Show()
+                Me.Hide()
+            Else
+                MsgBox("Invalid credentials!!", MsgBoxStyle.Critical)
+            End If
+        Catch ex As Exception
+            MsgBox("Error", ex.Message)
+        End Try
+        con.Close()
+    End Sub
+
+    Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
+        Me.Close()
+    End Sub
+
+End Class
