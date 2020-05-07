@@ -1,0 +1,22 @@
+Public Class Ques_2
+    Dim radiobutton As String
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        MessageBox.Show("Name :" & TextBox1.Text & Environment.NewLine &
+                            "Mobile No. :" & TextBox3.Text & Environment.NewLine &
+                            "Address :" & TextBox4.Text & Environment.NewLine &
+                            "Email : " & TextBox6.Text & Environment.NewLine &
+                          "Gender: " & radiobutton, "Registered")
+    End Sub
+
+    Private Sub RadioButton1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton1.CheckedChanged
+        If RadioButton1.Checked = True Then
+            radiobutton = RadioButton1.Text
+        End If
+    End Sub
+
+    Private Sub RadioButton2_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton2.CheckedChanged
+        If RadioButton2.Checked = True Then
+            radiobutton = RadioButton2.Text
+        End If
+    End Sub
+End Class
