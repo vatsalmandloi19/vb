@@ -1,0 +1,67 @@
+Module Module1
+    Sub Main()
+        While True
+            Console.WriteLine("1.Tables")
+            Console.WriteLine("2.Series")
+            Console.WriteLine("3.Factorial")
+            Console.WriteLine("4.Reverse")
+            Console.WriteLine("5.Exit")
+            Console.Write("Enter Your Choice :: ")
+            Dim choice As Integer = Console.ReadLine
+            Select Case choice
+                Case 1
+                    Tables()
+                Case 2
+                    Series()
+                Case 3
+                    Factorial()
+                Case 4
+                    reverse()
+            End Select
+            Console.Clear()
+        End While
+    End Sub
+    Public Sub Tables()
+        Console.WriteLine("Enter Which Table To Print")
+        Dim a As Integer = Console.ReadLine
+        Console.WriteLine("Enter Till When It Is To Be Printed")
+        Dim b As Integer = Console.ReadLine
+        For c As Integer = 1 To b
+            Dim d As Integer = a * c
+            Console.WriteLine(a & " x " & c & " = " & d)
+        Next
+        Console.ReadKey()
+    End Sub
+    Public Sub Series()
+        Console.WriteLine("Enter Counter : ")
+        Dim a As Integer = Console.ReadLine
+        Dim res As Integer = 0
+        For b As Integer = 0 To a
+            res = b + res
+            Console.WriteLine(b & " + " & res)
+        Next
+        Console.WriteLine(res)
+        Console.ReadKey()
+    End Sub
+    Public Sub Factorial()
+        Console.WriteLine("Enter Number To Calculate Factorial : ")
+        Dim _ip = Console.ReadLine
+        Dim result As Integer = 1
+        Dim temp As Integer = _ip
+        For flag As Integer = 1 To _ip
+            result = flag * result
+        Next
+        Console.WriteLine(result)
+        Console.ReadKey()
+    End Sub
+    Public Sub reverse()
+        Console.WriteLine("Enter Number To Reverse")
+        Dim _ReadString() As Char = Console.ReadLine
+        Dim i As Integer = _ReadString.Count - 1
+        While i >= 0
+            Console.Write(_ReadString(i))
+            i -= 1
+        End While
+        Console.ReadKey()
+    End Sub
+End Module
